@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-string cadenaConexion = builder.Configuration.GetConnectionString("hospitallocal");
+string cadenaConexion = builder.Configuration.GetConnectionString("hospitalazure");
 RepositoryDepartamentos repo = new RepositoryDepartamentos(cadenaConexion);
 builder.Services.AddTransient<RepositoryDepartamentos>(x => repo);
 var app = builder.Build();
